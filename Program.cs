@@ -16,9 +16,8 @@ namespace week2codingprojectFINAL
             Disemvoweler("I'm a code ninja, baby. I make the functions and I make the calls.");
 
             //ChangeMaker Function Calls
-            ChangeMaker(3.18);
-            ChangeMaker(.99);
-            ChangeMaker(100.93);
+            
+            ChangeMaker(135.93);
 
         }
 
@@ -74,6 +73,7 @@ namespace week2codingprojectFINAL
         }
         static void ChangeMaker(double number)
         {
+            Console.WriteLine("CASH IS :" + number);
             double hundred = 100;
                 double fifty = 50;
                 double twenty = 20;
@@ -97,21 +97,41 @@ namespace week2codingprojectFINAL
             decimal numberD = (decimal)number;
             decimal numberofHs = numberD / hundredD;
             decimal after100s = numberD % hundredD;
-            decimal numberofQs = after100s / quarterD;
-            decimal numAfter25 = after100s % quarterD;
+            decimal numberof50s = after100s / fiftyD;
+            decimal numAfter50s = after100s % fiftyD;
+            decimal numberof20s = numAfter50s / twentyD;
+            decimal numAfter20s = numAfter50s % twentyD;
+            decimal numberof10s = numAfter20s / tenD;
+            decimal numAfter10s = numAfter20s % tenD;
+            decimal numberof5s = numAfter10s / fiveD;
+            decimal numAfter5s = numAfter10s % fiveD;
+            decimal numberof1s = numAfter5s / oneD;
+            decimal numAfter1s = numAfter5s % oneD;
+            decimal numberofQs = numAfter1s / quarterD;
+            decimal numAfter25 = numAfter1s % quarterD;
             decimal numberofDs = numAfter25 / dimeD;
             decimal numAfter10 = numAfter25 % dimeD;
             decimal numberofNs = numAfter10 / nickelD;
             decimal numAfter5 = numAfter10 % nickelD;
             decimal numberofPs = numAfter5 / pennyD;
-            decimal numAfter1s = numAfter5 % pennyD;
+            decimal numAfterPs = numAfter5 % pennyD;
             int h = (int)numberofHs;
+            int fi = (int)numberof50s;
+            int tw = (int)numberof20s;
+            int t = (int)numberof10s;
+            int f = (int)numberof5s;
+            int o = (int)numberof1s;
             int q = (int)numberofQs;
             decimal.Round(numAfter25,2);
             int d = (int)numberofDs;
             int n = (int)numberofNs;
             int p = (int)numberofPs;
             Console.WriteLine("number of hundreds: " + h);
+            Console.WriteLine("number of fifties: " + fi);
+            Console.WriteLine("number of twenties: " + tw);
+            Console.WriteLine("number of tens: " + t);
+            Console.WriteLine("number of fives: " + f);
+            Console.WriteLine("number of ones: " + o);
             Console.WriteLine("number of quarters: " + q);
                 Console.WriteLine("number of dimes: " + d);
                 Console.WriteLine("number of nickels: " + n);
